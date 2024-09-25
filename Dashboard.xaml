@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBControl.Dashboard"
+             Title="Dashboard">
+    <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+        <Border Margin="10" Grid.Row="0" Grid.Column="0">
+            <Grid RowDefinitions="*,.2*">
+                <ImageButton Clicked="Products_Clicked" HeightRequest="100" WidthRequest="100" Grid.Row="0" Grid.Column="0" x:Name="Products" Source="products.png"/>
+                <Label Grid.Row="1" HorizontalOptions="Center" Text="Products Panel"/>
+            </Grid>
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ProductsCommand}"></TapGestureRecognizer>
+            </Border.GestureRecognizers>
+        </Border>
+
+        <Border Margin="10" Grid.Row="0" Grid.Column="1">
+            <Grid RowDefinitions="*,.2*">
+                <ImageButton Clicked="Tables_Clicked" HeightRequest="100" WidthRequest="100" Grid.Row="0" Grid.Column="0" x:Name="Tables" Source="tables.jpg"/>
+                <Label Grid.Row="1" HorizontalOptions="Center" Text="Tables Sort"/>
+            </Grid>
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Tables_Tapped"></TapGestureRecognizer>
+            </Border.GestureRecognizers>
+        </Border>
+
+        <Border Margin="10" Grid.Row="1" Grid.Column="0">
+            <Grid RowDefinitions="*,.2*">
+                <ImageButton Clicked="Branches_Clicked" HeightRequest="100" WidthRequest="100" Grid.Row="0" Grid.Column="0" x:Name="Branches" Source="branch.png"/>
+                <Label Grid.Row="1" HorizontalOptions="Center" Text="Branches Manage"/>
+            </Grid>
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Branch_Tapped"></TapGestureRecognizer>
+            </Border.GestureRecognizers>
+        </Border>
+
+        <Border Margin="10" Grid.Row="1" Grid.Column="1">
+            <Grid RowDefinitions="*,.2*">
+                <ImageButton Clicked="SiteMainSettings_Clicked" HeightRequest="100" WidthRequest="100" Grid.Row="0" Grid.Column="0" x:Name="SiteMainSettings" Source="operator.jpg"/>
+                <Label Grid.Row="1" HorizontalOptions="Center" Text="Site Manage"/>
+            </Grid>
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="SiteMainSettings_Tapped"></TapGestureRecognizer>
+            </Border.GestureRecognizers>
+        </Border>
+
+    </Grid>
+</ContentPage>

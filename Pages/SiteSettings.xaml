@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBControl.Pages.SiteSettings"
+             xmlns:elroubyentry="clr-namespace:ElroubyMauiLibraryPlus.TextBoxes;assembly=ElroubyMauiLibraryPlus"
+             Title="Site Settings">
+    <Grid x:Name="GridLoaded" Loaded="Grid_Loaded" RowDefinitions=".3*,.2*,.5*,.1*" ColumnDefinitions="*,*,*,*">
+        <HorizontalStackLayout Margin="5" Grid.Row="0" Grid.Column="0">
+            <CheckBox x:Name="AdminCheckBox" VerticalOptions="Center" HorizontalOptions="Center" IsChecked="False"/>
+            <Label VerticalOptions="Center" HorizontalOptions="Center" Text="Admin Only Post"/>
+        </HorizontalStackLayout>
+
+        <Border Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1">
+            <VerticalStackLayout>
+                <Image Source="empty.jpg" x:Name="LogoImage">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LogoImageTap"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label HorizontalOptions="Center" Text="Logo Image">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LogoImageTap"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </Border>
+        
+        <elroubyentry:DynEntry DynTitle="Facebook Link" Margin="5" VerticalOptions="Center" x:Name="FacebookURL" Grid.Row="1" Grid.Column="0"/>
+        <elroubyentry:DynEntry DynTitle="WhatsApp Link" Margin="5" VerticalOptions="Center" x:Name="WhatsAppURL" Grid.Row="1" Grid.Column="1"/>
+        <elroubyentry:DynEntry DynTitle="Instagram Link" Margin="5" VerticalOptions="Center" x:Name="InstagramURL" Grid.Row="1" Grid.Column="2"/>
+        <elroubyentry:DynEntry DynTitle="TikTok Link" Margin="5" VerticalOptions="Center" x:Name="TikTokURL" Grid.Row="1" Grid.Column="3"/>
+
+
+        <Border Margin="10" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <VerticalStackLayout>
+                <Image Source="empty.jpg" x:Name="DefaultCover">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DefaultCoverTap"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label HorizontalOptions="Center" Text="Default Cover">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DefaultCoverTap"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </Border>
+
+        <Border Margin="10" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2">
+            <VerticalStackLayout>
+                <Image Source="empty.jpg" x:Name="DefaultMainImage">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DefaultMainImageTap"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label HorizontalOptions="Center" Text="Default Main Image">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DefaultMainImageTap"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </Border>
+
+        <Button Clicked="Save_Clicked" Margin="5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="Save" Text="Save"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBControl.MainPage"
+             xmlns:elrouby="clr-namespace:ElroubyMauiLibraryPlus.Lists;assembly=ElroubyMauiLibraryPlus"
+             xmlns:entries="clr-namespace:ElroubyMauiLibraryPlus.TextBoxes;assembly=ElroubyMauiLibraryPlus">
+
+    <ScrollView Loaded="ScrollView_Loaded" VerticalOptions="Center">
+        <VerticalStackLayout Margin="5">
+            <Image Source="signin.jpg" WidthRequest="256" HeightRequest="256"/>
+            <Border StrokeShape="RoundRectangle 10,10,10,10" Margin="20">
+                <Grid BackgroundColor="#0E46A3" Margin="15" ColumnDefinitions="*,*,*" RowDefinitions="*,*,*,*">
+                    <entries:DynEntry Padding="10" Margin="10" TextChanged="Username_TextChanged" DynTitle="Username" HeightRequest="100" Text="" x:Name="Username" PlaceholderColor="White" BackgroundColor="#9AC8CD" Grid.ColumnSpan="3" Grid.Row="0" Placeholder="Username"/>
+                    <entries:DynEntry Padding="10" Margin="10" TextChanged="Password_TextChanged" DynTitle="Password" HeightRequest="100" Text="" x:Name="Password" PlaceholderColor="White" BackgroundColor="#9AC8CD" Grid.ColumnSpan="3" Grid.Row="1" IsPassword="True" Placeholder="Password"/>
+
+                    <Button BackgroundColor="#1E0342" Margin="15" HorizontalOptions="End" Grid.Column="3" WidthRequest="100" Grid.Row="2" x:Name="EnterButton" Clicked="EnterButton_Clicked" Text="Enter"/>
+                </Grid>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

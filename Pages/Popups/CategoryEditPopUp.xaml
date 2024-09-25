@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<com:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:com="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+           xmlns:elroubylists="clr-namespace:ElroubyMauiLibraryPlus.Lists;assembly=ElroubyMauiLibraryPlus"
+           x:Class="OBControl.Pages.Popups.CategoryEditPopUp"
+           CanBeDismissedByTappingOutsideOfPopup="False">
+
+    <Grid BackgroundColor="WhiteSmoke" RowDefinitions="*,.3*,.3*,.3*" ColumnDefinitions="*,*,.5*">
+        <elroubylists:FreeList Loaded="listofcats_Loaded" x:Name="listofcats" Margin="10" Grid.ColumnSpan="3" Grid.Row="0"/>
+
+        <Entry BackgroundColor="WhiteSmoke" Grid.ColumnSpan="3" HorizontalTextAlignment="Center" Grid.Row="1" Placeholder="New Category" x:Name="CatsEntry" Text=""/>
+
+        <Button HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="2" Margin="10" x:Name="AddCat" Clicked="AddCat_Clicked" Text="Add"/>
+        <Button HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" x:Name="DeleteCat" Clicked="DeleteCat_Clicked" Text="Delete"/>
+
+        <Button HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="0" Margin="10" x:Name="CloseWindow" Clicked="CloseWindow_Clicked" Text="Close"/>
+    </Grid>
+    
+</com:Popup>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBControl.Pages.TablesPage"
+             xmlns:elrouby="clr-namespace:ElroubyMauiLibraryPlus.TextBoxes;assembly=ElroubyMauiLibraryPlus"
+             xmlns:elroubygrid="clr-namespace:ElroubyMauiLibraryPlus.DataGridComponents;assembly=ElroubyMauiLibraryPlus"
+             Title="Tables Manager" BackgroundColor="WhiteSmoke">
+
+    <Grid Loaded="Grid_Loaded" RowDefinitions="*,*,.4*" ColumnDefinitions=".3*,.3*,.3*">
+        <elroubygrid:DataGridViewPlus SelectedRowChanged="Grid_SelectedRowChanged" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="Grid"/>
+
+        <elrouby:DynEntryInteger DynTitle="ID" Grid.Row="1" Grid.Column="0" IsReadOnly="True" x:Name="IDOf"/>
+        <elrouby:DynEntry DynTitle="Table Name" Grid.Row="1" Grid.Column="1" Text="" x:Name="TableName"/>
+        <elrouby:DynEntryInteger DynTitle="Table Number" Grid.Row="1" Grid.Column="2" Text="" x:Name="TableNumber"/>
+
+        <Button Margin="5" x:Name="Assign" Clicked="Assign_Clicked" Grid.Row="2" Grid.Column="0" Text="Assign"/>
+        <Button Margin="5" x:Name="Delete" Clicked="Delete_Clicked" Grid.Row="2" Grid.Column="1" Text="Delete"/>
+        <Button Margin="5" x:Name="New" Clicked="New_Clicked" Grid.Row="2" Grid.Column="2" Text="New"/>
+    </Grid>
+    
+</ContentPage>

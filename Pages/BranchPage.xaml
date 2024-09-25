@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBControl.Pages.BranchPage"
+             xmlns:elrouby="clr-namespace:ElroubyMauiLibraryPlus.TextBoxes;assembly=ElroubyMauiLibraryPlus"
+             xmlns:elroubygrid="clr-namespace:ElroubyMauiLibraryPlus.DataGridComponents;assembly=ElroubyMauiLibraryPlus"
+             Title="Branchs Manager" BackgroundColor="WhiteSmoke">
+
+    <Grid x:Name="GridOf" Loaded="Grid_Loaded" RowDefinitions="*,.4*,.4*,.3*" ColumnDefinitions=".3*,.3*,.3*,.3*,.3*">
+        <elroubygrid:DataGridViewPlus SelectedRowChanged="Grid_SelectedRowChanged" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" x:Name="Grid"/>
+
+        <elrouby:DynEntryInteger DynTitle="ID" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="0" IsReadOnly="True" x:Name="IDOf"/>
+        <elrouby:DynEntry DynTitle="Branch Name" Grid.Row="1" Grid.Column="3" Text="" x:Name="BranchName"/>
+        <elrouby:DynEntryInteger DynTitle="Branch Phone" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="" x:Name="BranchPhone"/>
+        <elrouby:DynEntry DynTitle="Branch Address" Grid.Row="2" Grid.Column="3" Text="" x:Name="BranchAddress"/>
+        
+
+        <Button Margin="5" x:Name="Assign" Clicked="Assign_Clicked" Grid.Row="3" Grid.Column="1" Text="Assign"/>
+        <Button Margin="5" x:Name="Delete" Clicked="Delete_Clicked" Grid.Row="3" Grid.Column="2" Text="Delete"/>
+        <Button Margin="5" x:Name="New" Clicked="New_Clicked" Grid.Row="3" Grid.Column="3" Text="New"/>
+    </Grid>
+    
+</ContentPage>
